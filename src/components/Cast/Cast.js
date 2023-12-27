@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
+import { IoIosPhotos } from 'react-icons/io';
 
 export const Cast = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -41,7 +42,7 @@ export const Cast = () => {
                   {profile_path ? (
                     <img src={photo} alt={name} />
                   ) : (
-                    <div>NoPoster</div>
+                    <IoIosPhotos />
                   )}
                   <div>
                     <p>{name}</p>

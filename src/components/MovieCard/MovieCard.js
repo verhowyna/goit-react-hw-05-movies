@@ -1,3 +1,4 @@
+import { IoIosPhotos } from 'react-icons/io';
 import { NavLink, useLocation } from 'react-router-dom';
 
 export const MovieCard = ({ movie: { id, poster_path, title } }) => {
@@ -8,7 +9,7 @@ export const MovieCard = ({ movie: { id, poster_path, title } }) => {
   return (
     <li key={id}>
       <NavLink to={`movies/${id}`} state={{ from: location }}>
-        {poster_path ? <img src={photo} alt={title} /> : <div>No Poster</div>}
+        {poster_path ? <img src={photo} alt={title} /> : <IoIosPhotos />}
         <h3>{title}</h3>
       </NavLink>
     </li>
