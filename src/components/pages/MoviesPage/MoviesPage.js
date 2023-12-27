@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { IoIosPhotos, IoMdSearch } from 'react-icons/io';
 import { NavLink, useLocation, useSearchParams } from 'react-router-dom';
+import css from './MoviePage.module.css';
 
 export default function MoviesPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -47,22 +48,23 @@ export default function MoviesPage() {
 
   return (
     <>
-      <form onSubmit={onSearch}>
+      <form className={css.inputWrap} onSubmit={onSearch}>
         <input
+          className={css.inputField}
           type="text"
           autoComplete="off"
           placeholder="Search movie"
           name="movie"
         />
-        <button type="submit">
+        <button className={css.searchBtn} type="submit">
           <IoMdSearch size="24" />
         </button>
       </form>
       {isLoading && <Loader />}
 
       {movies.length > 0 && !isLoading && (
-        <div>
-          <ul>
+        <div className={css.wrap}>
+          <ul className={css.moviesList}>
             {movies.length > 0 &&
               movies.map(movie => {
                 const { id, title, poster_path } = movie;
@@ -70,20 +72,24 @@ export default function MoviesPage() {
                 const photo = BASE_URL + poster_path;
 
                 return (
-                  <li key={id}>
-                    <NavLink to={`${id}`} state={{ from: location }}>
+                  <li className={css.card} key={id}>
+                    <NavLink
+                      className={css.cardLink}
+                      to={`${id}`}
+                      state={{ from: location }}
+                    >
                       {poster_path ? (
                         <img src={photo} alt={title} />
                       ) : (
                         <IoIosPhotos
                           style={{
                             width: '200px',
-                            height: '200px',
+                            height: '280px',
                             color: '#8080803b',
                           }}
                         />
                       )}
-                      <h3>{title}</h3>
+                      <div className={css.movieName}>{title}</div>
                     </NavLink>
                   </li>
                 );
@@ -93,7 +99,9 @@ export default function MoviesPage() {
       )}
 
       {movies.length === 0 && !isLoading && searchedMovie && (
-        <div>Movie "{searchedMovie}" not found. Please try again.</div>
+        <div className={css.warning}>
+          Movie "{searchedMovie}" not found. Please try again.
+        </div>
       )}
     </>
   );

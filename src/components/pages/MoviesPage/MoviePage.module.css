@@ -1,0 +1,65 @@
+.inputWrap {
+  display: flex;
+  height: 40px;
+  width: 300px;
+  border-radius: 12px;
+  margin-top: 30px;
+  margin-left: 30px;
+  padding: 8px;
+  box-shadow: rgba(248, 4, 4, 0.2) 0px 2px 2px,
+    rgba(209, 10, 10, 0.2) 0px 2px 4px, rgba(204, 10, 10, 0.2) 0px 5px 15px;
+}
+
+.inputField {
+  width: 250px;
+  font-size: 22px;
+  color: brown;
+  padding-left: 8px;
+}
+
+.searchBtn {
+  background-color: #fff;
+}
+
+.warning {
+  margin-top: 30px;
+  margin-left: 30px;
+  font-size: 24px;
+}
+
+.wrap {
+  max-width: 1440px;
+  margin: 0;
+  justify-content: start;
+}
+
+.moviesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+}
+
+.card {
+  width: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid black;
+  box-shadow: rgba(248, 4, 4, 0.03) 0px 0.8px 2px,
+    rgba(209, 10, 10, 0.047) 0px 2.7px 6.7px, rgba(0, 0, 0, 0.08) 0px 12px 30px;
+}
+
+.cardLink {
+  text-decoration: none;
+}
+
+.movieName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding: 10px 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+}

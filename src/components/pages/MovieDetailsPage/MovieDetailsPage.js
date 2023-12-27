@@ -1,6 +1,7 @@
 import { MovieDetails } from 'components/MovieDetails/MovieDetails';
 import { useRef } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import css from './MovieDetailsPage.module.css';
 
 export default function MovieDetailsPage() {
   const location = useLocation();
@@ -9,7 +10,9 @@ export default function MovieDetailsPage() {
   return (
     <>
       <NavLink to={backLink.current.state?.from ?? '/movies'}>
-        <button type="button">Go back</button>
+        <button className={css.backBtn} type="button">
+          Go back
+        </button>
       </NavLink>
 
       <MovieDetails />
