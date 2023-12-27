@@ -1,0 +1,23 @@
+.card {
+  width: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid black;
+  box-shadow: rgba(248, 4, 4, 0.03) 0px 0.8px 2px,
+    rgba(209, 10, 10, 0.047) 0px 2.7px 6.7px, rgba(0, 0, 0, 0.08) 0px 12px 30px;
+}
+
+.cardLink {
+  text-decoration: none;
+}
+
+.movieName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding: 10px 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+}
