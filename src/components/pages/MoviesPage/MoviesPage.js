@@ -9,6 +9,7 @@ export default function MoviesPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [params, setParams] = useSearchParams();
+
   const searchedMovie = params.get('movie') ?? '';
 
   useEffect(() => {
@@ -37,10 +38,10 @@ export default function MoviesPage() {
 
   const onSearch = evt => {
     evt.preventDefault();
-
     const { value } = evt.target.elements.movie;
     if (value) {
       setParams({ movie: value });
+      evt.target.reset();
     }
   };
 
@@ -91,12 +92,9 @@ export default function MoviesPage() {
         </div>
       )}
 
-      {movies.length === 0 &&
-        !isLoading &&
-        searchedMovie &&
-        toast.error(
-          'Sorry, there are no movies matching your search query. Please try again.'
-        )}
+      {movies.length === 0 && !isLoading && searchedMovie && (
+        <div>Movie "{searchedMovie}" not found. Please try again.</div>
+      )}
     </>
   );
 }
