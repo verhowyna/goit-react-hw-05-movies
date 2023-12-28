@@ -30,7 +30,11 @@ export const Reviews = () => {
       {isLoading && <Loader />}
       {reviews.length > 0 && (
         <div>
-          <ul>
+          <ul
+            style={{
+              listStyle: 'none',
+            }}
+          >
             {reviews.map(review => {
               const { author, content } = review;
               return (

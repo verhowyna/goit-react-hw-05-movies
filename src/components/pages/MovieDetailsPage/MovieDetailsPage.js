@@ -17,15 +17,19 @@ export default function MovieDetailsPage() {
 
       <MovieDetails />
 
-      <div>
+      <div className={css.wraper}>
         <h3>Additional information:</h3>
 
-        <ul>
+        <ul className={css.informationList}>
           <li>
-            <NavLink to="cast">Cast</NavLink>
+            <NavLink className={css.informationLink} to="cast">
+              Cast
+            </NavLink>
           </li>
           <li>
-            <NavLink to="reviews">Reviews</NavLink>
+            <NavLink className={css.informationLink} to="reviews">
+              Reviews
+            </NavLink>
           </li>
         </ul>
       </div>

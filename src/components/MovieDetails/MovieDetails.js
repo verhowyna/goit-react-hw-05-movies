@@ -3,6 +3,7 @@ import { getDetails } from 'components/api';
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
+import css from './MovieDetails.module.css';
 
 export const MovieDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -40,21 +41,21 @@ export const MovieDetails = () => {
     <>
       {isLoading && <Loader />}
       {movie && (
-        <div>
-          <div>
-            <img src={makeImgURL()} alt={movie.title}></img>
-            <div>
-              <h2>{movie.title}</h2>
-              <p>User score: {getAverage()}%</p>
-              <h3>Overview</h3>
-              <p>{movie.overview}</p>
-              <h3>Genres</h3>
-              <ul>
-                {movie.genres.map(({ name, id }) => (
-                  <li key={id}>{name} </li>
-                ))}
-              </ul>
-            </div>
+        <div className={css.container}>
+          <img src={makeImgURL()} alt={movie.title}></img>
+          <div className={css.wraper}>
+            <h2>{movie.title}</h2>
+            <p className={css.text}>User score: {getAverage()}%</p>
+            <h3>Overview</h3>
+            <p className={css.text}>{movie.overview}</p>
+            <h3>Genres</h3>
+            <ul className={css.genresList}>
+              {movie.genres.map(({ name, id }) => (
+                <li className={css.genresItem} key={id}>
+                  {name}{' '}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       )}
