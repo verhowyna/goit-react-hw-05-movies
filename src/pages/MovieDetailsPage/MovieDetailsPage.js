@@ -1,6 +1,6 @@
 import { MovieDetails } from 'components/MovieDetails/MovieDetails';
 import { useEffect, useRef, useState } from 'react';
-import { NavLink, useLocation, useParams } from 'react-router-dom';
+import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import css from './MovieDetailsPage.module.css';
 import toast from 'react-hot-toast';
 import { getDetails } from 'services/api';
@@ -39,19 +39,7 @@ export default function MovieDetailsPage() {
       {isLoading && <Loader />}
       {movie && <MovieDetails movie={movie} />}
 
-      <div className={css.wraper}>
-        <h3>Additional information:</h3>
-
-        <div className={css.informationList}>
-          <NavLink className={css.informationLink} to="cast">
-            Cast
-          </NavLink>
-
-          <NavLink className={css.informationLink} to="reviews">
-            Reviews
-          </NavLink>
-        </div>
-      </div>
+      <Outlet />
     </div>
   );
 }
