@@ -3,7 +3,7 @@ import css from './Layout.module.css';
 
 export const Layout = () => {
   return (
-    <>
+    <div>
       <header className={css.wraper}>
         <nav>
           <ul className={css.list}>
@@ -23,6 +23,6 @@ export const Layout = () => {
       <div>
         <Outlet />
       </div>
-    </>
+    </div>
   );
 };

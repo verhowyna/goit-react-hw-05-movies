@@ -1,5 +1,5 @@
 import { Loader } from 'components/Loader/Loader';
-import { getReviews } from 'components/api';
+import { getReviews } from 'services/api';
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom';

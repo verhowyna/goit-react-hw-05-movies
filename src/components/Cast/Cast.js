@@ -1,5 +1,5 @@
 import { Loader } from 'components/Loader/Loader';
-import { getCast } from 'components/api';
+import { getCast } from 'services/api';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import toast from 'react-hot-toast';

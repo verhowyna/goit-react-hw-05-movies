@@ -1,9 +1,9 @@
-import { Layout } from './Layout/Layout';
-import { Cast } from './Cast/Cast';
-import { Reviews } from './Reviews/Reviews';
+import { Layout } from './components/Layout/Layout';
+import { Cast } from './components/Cast/Cast';
+import { Reviews } from './components/Reviews/Reviews';
 import { Route, Routes } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
-import { Loader } from './Loader/Loader';
+import { Loader } from './components/Loader/Loader';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const MoviesPage = lazy(() => import('./pages/MoviesPage/MoviesPage'));
@@ -12,7 +12,7 @@ const MovieDetailsPage = lazy(() =>
 );
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 
-export const App = () => {
+export default function App() {
   return (
     <>
       <Suspense fallback={<Loader />}>
@@ -30,4 +30,4 @@ export const App = () => {
       </Suspense>
     </>
   );
-};
+}
